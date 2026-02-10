@@ -29,7 +29,9 @@ mkdir -p ~/Projetos/catalogo-eventos-api/src/core
 
 cp -r ~/Projetos/projeto-basico-com-crud-usuario/src/core/adapters ~/Projetos/projeto-basico-com-crud-usuario/src/core/config ~/Projetos/projeto-basico-com-crud-usuario/src/core/errors ~/Projetos/projeto-basico-com-crud-usuario/src/core/helpers ~/Projetos/projeto-basico-com-crud-usuario/src/core/interfaces ~/Projetos/projeto-basico-com-crud-usuario/src/core/middlewares ~/Projetos/projeto-basico-com-crud-usuario/src/core/protocols ~/Projetos/projeto-basico-com-crud-usuario/src/core/database.ts ~/Projetos/catalogo-eventos-api/src/core
 
-cp -r ~/Projetos/projeto-basico-com-crud-usuario/src/docs ~/Projetos/catalogo-eventos-api/docs
+mkdir -p ~/Projetos/catalogo-eventos-api/src/docs/swagger
+
+cp -r ~/Projetos/projeto-basico-com-crud-usuario/src/docs/swagger ~/Projetos/catalogo-eventos-api/src/docs/swagger
 
 cp ~/Projetos/projeto-basico-com-crud-usuario/src/server.ts ~/Projetos/catalogo-eventos-api/src
 
