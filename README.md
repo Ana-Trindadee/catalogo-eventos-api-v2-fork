@@ -29,6 +29,8 @@ mkdir -p ~/Projetos/catalogo-eventos-api/src/core
 
 cp -r ~/Projetos/projeto-basico-com-crud-usuario/src/core/adapters ~/Projetos/projeto-basico-com-crud-usuario/src/core/config ~/Projetos/projeto-basico-com-crud-usuario/src/core/errors ~/Projetos/projeto-basico-com-crud-usuario/src/core/helpers ~/Projetos/projeto-basico-com-crud-usuario/src/core/interfaces ~/Projetos/projeto-basico-com-crud-usuario/src/core/middlewares ~/Projetos/projeto-basico-com-crud-usuario/src/core/protocols ~/Projetos/projeto-basico-com-crud-usuario/src/core/database.ts ~/Projetos/catalogo-eventos-api/src/core
 
+cp -r ~/Projetos/projeto-basico-com-crud-usuario/src/docs ~/Projetos/catalogo-eventos-api/docs
+
 cp ~/Projetos/projeto-basico-com-crud-usuario/src/server.ts ~/Projetos/catalogo-eventos-api/src
 
 cp ~/Projetos/catalogo-eventos-api/.env-exemplo ~/Projetos/catalogo-eventos-api/.env
