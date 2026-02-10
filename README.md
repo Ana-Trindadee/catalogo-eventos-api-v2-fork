@@ -33,6 +33,8 @@ cp ~/Projetos/projeto-basico-com-crud-usuario/src/server.ts ~/Projetos/catalogo-
 
 cp ~/Projetos/catalogo-eventos-api/.env-exemplo ~/Projetos/catalogo-eventos-api/.env
 
+cp ~/Projetos/projeto-basico-com-crud-usuario/.gitignore ~/Projetos/catalogo-eventos-api
+
 yarn init -y
 
 yarn add -D @types/bcrypt@^5.0.2 @types/dotenv@^8.2.3 @types/express@^5.0.2 @types/jest@^29.5.13 @types/jsonwebtoken@^9.0.9 @types/node@^22.15.21 @types/supertest@^6.0.3 @types/swagger-jsdoc@^6.0.4 @types/swagger-ui-express@^4.1.8 @types/yamljs@^0.2.34 copyfiles@^2.4.1 jest@^29.7.0 nodemon@^3.1.10 rimraf@^6.0.1 sqlite3@^5.1.7 supertest@^7.1.4 ts-jest@^29.2.5 ts-node@^10.9.2 tsc-alias@^1.8.16 tsconfig-paths@^4.2.0 typescript@^5.8.3
@@ -69,10 +71,10 @@ yarn add bcrypt@^6.0.0 dotenv@^16.5.0 express@^5.1.0 fast-glob@^3.3.3 jsonwebtok
 ```
 
 ```bash
-echo "# catalogo-eventos-api" >> README.md
 git init
 git add --all
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/JhonataProf/catalogo-eventos-api.git
+git remote add origin https://github.com/JhonataProf/catalogo-eventos-api-v2.git
+git push -u origin main
 ```
