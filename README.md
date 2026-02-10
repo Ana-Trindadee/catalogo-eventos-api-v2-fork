@@ -31,7 +31,7 @@ cp -r ~/Projetos/projeto-basico-com-crud-usuario/src/core/adapters ~/Projetos/pr
 
 mkdir -p ~/Projetos/catalogo-eventos-api/src/docs/swagger
 
-cp -r ~/Projetos/projeto-basico-com-crud-usuario/src/docs/swagger ~/Projetos/catalogo-eventos-api/src/docs/swagger
+cp -r ~/Projetos/projeto-basico-com-crud-usuario/src/docs/swagger ~/Projetos/catalogo-eventos-api/src/docs
 
 cp ~/Projetos/projeto-basico-com-crud-usuario/src/server.ts ~/Projetos/catalogo-eventos-api/src
 

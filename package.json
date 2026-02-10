@@ -2,6 +2,8 @@
   "name": "catalogo-eventos-api",
   "version": "1.0.0",
   "main": "index.js",
+  "repository": "https://github.com/JhonataProf/catalogo-eventos-api-v2.git",
+  "author": "Professor Jhonata <jhonata.sobral@ms.senac.br>",
   "license": "MIT",
   "scripts": {
     "dev": "nodemon",
