@@ -75,6 +75,48 @@ yarn add bcrypt@^6.0.0 dotenv@^16.5.0 express@^5.1.0 fast-glob@^3.3.3 jsonwebtok
 ```
 
 ```bash
+mkdir ~/Projetos/catalogo-eventos-api/src/modules
+
+mkdir -p ~/Projetos/catalogo-eventos-api/src/modules/login/controller ~/Projetos/catalogo-eventos-api/src/modules/login/model ~/Projetos/catalogo-eventos-api/src/modules/login/schemas ~/Projetos/catalogo-eventos-api/src/modules/login/service ~/Projetos/catalogo-eventos-api/src/modules/login/types
+
+cp -r ~/Projetos/projeto-basico-com-crud-usuario/src/controllers/login ~/Projetos/catalogo-eventos-api/src/modules/login/controller
+
+cp -r ~/Projetos/projeto-basico-com-crud-usuario/src/factories ~/Projetos/catalogo-eventos-api/src/modules/login
+
+cp ~/Projetos/projeto-basico-com-crud-usuario/src/models/user-model.ts ~/Projetos/catalogo-eventos-api/src/modules/login/model
+
+cp ~/Projetos/projeto-basico-com-crud-usuario/src/schemas/user.ts ~/Projetos/catalogo-eventos-api/src/modules/login/schemas
+
+cp ~/Projetos/projeto-basico-com-crud-usuario/src/service/usuario-service.ts ~/Projetos/catalogo-eventos-api/src/modules/login/service
+
+cp -r ~/Projetos/projeto-basico-com-crud-usuario/src/types/usuarios ~/Projetos/catalogo-eventos-api/src/modules/login/types
+
+mkdir -p ~/Projetos/catalogo-eventos-api/src/routes/login
+
+cp ~/Projetos/projeto-basico-com-crud-usuario/src/routes/login.ts ~/Projetos/projeto-basico-com-crud-usuario/src/routes/refresh-token.ts ~/Projetos/catalogo-eventos-api/src/routes/login
+```
+
+```bash
+mkdir -p ~/Projetos/catalogo-eventos-api/src/modules/usuario/controller ~/Projetos/catalogo-eventos-api/src/modules/usuario/model ~/Projetos/catalogo-eventos-api/src/modules/usuario/schemas ~/Projetos/catalogo-eventos-api/src/modules/usuario/service ~/Projetos/catalogo-eventos-api/src/modules/usuario/types
+
+cp -r ~/Projetos/projeto-basico-com-crud-usuario/src/controllers/usuario ~/Projetos/catalogo-eventos-api/src/modules/usuario/controller
+
+cp -r ~/Projetos/projeto-basico-com-crud-usuario/src/factories ~/Projetos/catalogo-eventos-api/src/modules/usuario
+
+cp ~/Projetos/projeto-basico-com-crud-usuario/src/models/user-model.ts ~/Projetos/catalogo-eventos-api/src/modules/usuario/model
+
+cp ~/Projetos/projeto-basico-com-crud-usuario/src/schemas/user.ts ~/Projetos/catalogo-eventos-api/src/modules/usuario/schemas
+
+cp ~/Projetos/projeto-basico-com-crud-usuario/src/service/usuario-service.ts ~/Projetos/catalogo-eventos-api/src/modules/usuario/service
+
+cp -r ~/Projetos/projeto-basico-com-crud-usuario/src/types/usuarios ~/Projetos/catalogo-eventos-api/src/modules/usuario/types
+
+mkdir -p ~/Projetos/catalogo-eventos-api/src/routes/user
+
+cp ~/Projetos/projeto-basico-com-crud-usuario/src/routes/criar-usuario.ts ~/Projetos/projeto-basico-com-crud-usuario/src/routes/editar-usuario.ts ~/Projetos/projeto-basico-com-crud-usuario/src/routes/deletar-usuario.ts ~/Projetos/projeto-basico-com-crud-usuario/src/routes/listar-usuario.ts ~/Projetos/projeto-basico-com-crud-usuario/src/routes/criar-usuario.ts ~/Projetos/catalogo-eventos-api/src/routes/user
+```
+
+```bash
 git init
 git add --all
 git commit -m "first commit"
