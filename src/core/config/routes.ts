@@ -15,6 +15,7 @@ export default (app: Express): void => {
     // Evita carregar arquivos de tipagem/declaração
     if (file.endsWith(".d.ts")) continue;
 
+    console.log(`[routes] Carregando rotas de ${path.basename(file)}...`);
     // Usar require para suportar CJS/TS transpilado
     const mod = require(file);
     const mount = mod.default ?? mod;

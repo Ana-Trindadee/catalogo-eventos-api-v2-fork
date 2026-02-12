@@ -2,34 +2,28 @@ import fs from "fs";
 import path from "path";
 import { Sequelize } from "sequelize";
 import { ENV } from "./env";
+import { resolveRuntimePath } from "./paths";
+import fg from "fast-glob";
 
 export const initializeDatabaseAndServer = async (sequelize: Sequelize) => {
   if (!ENV.UPDATE_MODEL) return; // evita sobrescrita se flag estiver habilitada
 
   try {
-    const modelsPath = path.resolve(__dirname, "../models");
-    if (!fs.existsSync(modelsPath)) {
-      console.warn("Pasta de models não encontrada:", modelsPath);
-      return;
-    }
 
-    const exts =
-      process.env.NODE_ENV === "production" ? [".js"] : [".ts", ".js"];
-    const modelFiles = fs
-      .readdirSync(modelsPath)
-      .filter((file) => exts.some((ext) => file.endsWith(`-model${ext}`)));
+    const modelsDir = resolveRuntimePath("modules");
+    const patterns = process.env.NODE_ENV === "production" ? ['**/*-model.js'] : ['**/*-model.js', '**/*-model.ts'];
+    const files = fg.sync(patterns, { cwd: modelsDir, absolute: true });
 
     const db: Record<string, any> = { sequelize, Sequelize };
-
-    // Carrega models
-    for (const file of modelFiles) {
-      const mod = await import(path.join(modelsPath, file));
+    for (const file of files) {
+      if (file.endsWith(".d.ts")) continue;
+      const mod = await import(file);
       const model = mod.default ?? mod;
       const modelName = file.replace(/-model\.(ts|js)$/, "");
+      console.log(`[DB] Carregando model ${modelName} de ${path.basename(file)}...`);
       db[modelName] = model;
     }
 
-    // Associações padrão (se o model expuser .associate)
     Object.values(db).forEach((m: any) => {
       if (m && typeof m.associate === "function") {
         m.associate(db);
@@ -44,8 +38,8 @@ export const initializeDatabaseAndServer = async (sequelize: Sequelize) => {
       ENV.NODE_ENV === "production"
         ? {}
         : ENV.NODE_ENV === "test"
-        ? { force: true }
-        : { alter: true };
+          ? { force: true }
+          : { alter: true };
 
     await sequelize.sync(syncOptions);
     console.log("Banco sincronizado.");
